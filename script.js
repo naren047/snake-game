@@ -17,7 +17,8 @@ const initialCanvas = () =>{
     canvas.fillStyle = '#132a13';
     canvas.font = 'bold 20px monospace'
     canvas.textAlign ='center'
-    canvas.fillText("Click the start button to play\nor Press ENTER",WIDTH/2,HEIGHT/2)
+    canvas.fillText("Click the start button",WIDTH/2,HEIGHT/2-10)
+    canvas.fillText("or Press any KEY to play",WIDTH/2,HEIGHT/2+10)
 }
 
 let notStarted = true;
@@ -189,16 +190,11 @@ start.addEventListener('click',()=>{
     }
 })
 
-document.addEventListener('keydown',(event)=>{
-    if(event.key = "Enter"){
-        if(notStarted){
-            notStarted=false;
-            game()
-        }
+document.addEventListener('keydown',()=>{
+    if(notStarted){
+        notStarted=false;
+        game()
     }
 })
 
 initialCanvas()
-
-
-
