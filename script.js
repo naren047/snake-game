@@ -17,7 +17,7 @@ const initialCanvas = () =>{
     canvas.fillStyle = '#132a13';
     canvas.font = 'bold 20px monospace'
     canvas.textAlign ='center'
-    canvas.fillText("Click the start button to play",WIDTH/2,HEIGHT/2)
+    canvas.fillText("Click the start button to play\nor Press ENTER",WIDTH/2,HEIGHT/2)
 }
 
 let notStarted = true;
