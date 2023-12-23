@@ -189,6 +189,15 @@ start.addEventListener('click',()=>{
     }
 })
 
+document.addEventListener('keydown',(event)=>{
+    if(event.key = "Enter"){
+        if(notStarted){
+            notStarted=false;
+            game()
+        }
+    }
+})
+
 initialCanvas()
 
 
