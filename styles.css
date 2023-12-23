@@ -55,6 +55,7 @@ p,button{
 button{
     border:none;
     box-shadow: #132a13 8px 8px 5px;
+    cursor:pointer;
 }
 
 button:active{
