@@ -67,3 +67,22 @@ button:focus{
     outline: none;
 }
 
+@media (max-width:1316px){
+    .note{
+        display:flex;
+        height:100vh;
+        justify-content:center;
+        align-items:center;
+        font-size:4vw;
+        font-weight:700;
+    }
+    .content{
+        display:none;
+    }
+}
+
+@media (min-width:1316px){
+    .note{
+        display:none;
+    }
+}
