@@ -94,6 +94,7 @@ const moveSnake = () =>{
         snake.pop()
     }
 }
+
 const isGameOver = (x,y) =>{
     if(x >= WIDTH || x < 0 || y >= HEIGHT || y < 0){
         return true
@@ -105,7 +106,7 @@ const isGameOver = (x,y) =>{
     }
 }
 
-document.addEventListener('keydown',(event) =>{
+const controls = () =>{
     if(event.key=="ArrowLeft" && xVel==0 && move){
         move = false;
         xVel=-UNIT;
@@ -126,7 +127,7 @@ document.addEventListener('keydown',(event) =>{
         xVel=0;
         yVel=UNIT;
     }
-})
+}
 
 const resetGameParameters = () =>{
     gameOver=false;
@@ -144,6 +145,7 @@ const resetGameParameters = () =>{
     ]
     
     food = {x:0,y:0}
+    document.removeEventListener('keydown',controls);
 }
 
 const endGame = (message) =>{
@@ -186,6 +188,7 @@ const game = () =>{
         snakeEatsFood()
         move=true;
         moveSnake();
+        document.addEventListener('keydown',controls);
     }
 
     scoreSpan.innerHTML = score<10 ? "0"+score : score;
@@ -201,7 +204,7 @@ start.addEventListener('click',()=>{
     }
 })
 
-document.addEventListener('keydown',()=>{
+document.addEventListener('keydown',(event)=>{
     if(notStarted){
         notStarted=false;
         game()
